@@ -6,11 +6,18 @@ def make_account(e):
 
     naming = document.getElementById('usenaem').innerHTML = ''
 
+    charnum_name = 0
+
+    for i in naming:
+        charnum_name += 1
+
     if not naming.isalpha():
         if naming.isdigit():
             display(f'Username invalid, please add letters', target='output')
     elif naming.isalpha:
         display(f'Username invalid, please add numbers', target='output')
+    if charnum_name < 7:
+        display(f'Username is too short, please add more numbers or letters', target='output')
     else:
         display(f'Username valid', target='output')
 
@@ -20,10 +27,17 @@ def make_account(e):
 
     wordpass = document.getElementById('passing').innerHTML = ''
 
+    charnum_pass = 0
+
+    for i in naming:
+        charnum_pass += 1
+
     if not wordpass.isdigit():
         if wordpass.isalpha():
             display(f'Invalid password, must contain numbers', target='output')
     elif wordpass.isdigit:
         display(f'Invalid password, must contain letters', target='output')
+    if charnum_pass > 10:
+         display(f'Password should be at least 10 characters', target='output')
     else:
         display(f'Password valid', target='output')
